@@ -23,6 +23,7 @@ const config: Config = {
   			res9: '900px'
   		},
   		colors: {
+  			brand: 'hsl(var(--brand))',
   			main: 'hsl(var(--main))',
   			'main-light': 'hsl(var(--main-light))',
   			background: 'hsl(var(--background))',

@@ -255,7 +255,7 @@ const Header = () => {
               onClick={() => {
                 setOpenCategory(!openCategory);
               }}
-              className="flex justify-between hover:bg-[#e03703] gap-3 px-4 py-3 rounded-none bg-[#e03703]  cursor-pointer w-full h-full items-center"
+              className="flex justify-between hover:bg-brand gap-3 px-4 py-3 rounded-none bg-brand  cursor-pointer w-full h-full items-center"
             >
               <div className="flex gap-2 items-center">
                 <List size={20} className="text-white" />
@@ -284,9 +284,8 @@ const Header = () => {
                     key={index}
                     href={link?.href}
                     className={cn(
-                      "text-white   hover:text-white font-medium transition-colors",
-                      pathName === link.href &&
-                        "text-white underline underline-offset-4"
+                      "text-white   hover:text-brand font-medium transition-colors",
+                      pathName === link.href && "text-brand "
                     )}
                   >
                     {link?.name}

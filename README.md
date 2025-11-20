@@ -45,8 +45,8 @@ bun dev
 ## Project Links
 
 - Production [Live](https://brandcollectionbd.com/)
-- Frontend [Live](https://neo-grocery-frontend.vercel.app/)
-- Admin [Live](https://neo-grocery-client.vercel.app/)
+- Frontend [Live](https://shikder-zone-frontend.vercel.app)
+- Admin [Live](https://shikder-zone-admin-dashboard.vercel.app)
 
 ## Deploy on Vercel
 

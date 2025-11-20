@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Brand Collection BD | Frontend",
-  description: "Brand Collection BD",
+  title: "Shikder Zone | All Products in one place",
+  description: "Shikder Zone",
 };
 
 export default async function RootLayout({

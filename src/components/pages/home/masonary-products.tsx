@@ -59,7 +59,10 @@ const MasonaryProducts = () => {
                   <div className="relative md:h-full overflow-hidden rounded-lg rounded-r-none">
                     <Image
                       onClick={() => handleOpenModal(feature)}
-                      src={`${feature?.featureImage?.image}?height=600&width=600`}
+                      src={
+                        `${feature?.featureImage?.image}?height=600&width=600` ||
+                        "/image.png"
+                      }
                       alt={feature?.name}
                       width={600}
                       height={600}
@@ -125,77 +128,82 @@ const MasonaryProducts = () => {
                   </div>
                 </CardContent>
               </Card>
-              <Card className=" group  transition-shadow duration-300">
-                <CardContent className="p-0 md:grid grid-cols-2 h-full">
-                  <div className="relative md:h-full overflow-hidden rounded-lg rounded-r-none">
-                    <Image
-                      onClick={() => handleOpenModal(featured)}
-                      src={`${featured?.featureImage?.image}?height=600&width=600`}
-                      alt={featured?.name}
-                      width={600}
-                      height={600}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+              {featured && (
+                <Card className=" group  transition-shadow duration-300">
+                  <CardContent className="p-0 md:grid grid-cols-2 h-full">
+                    <div className="relative md:h-full overflow-hidden rounded-lg rounded-r-none">
+                      <Image
+                        onClick={() => handleOpenModal(featured)}
+                        src={
+                          `${featured?.featureImage?.image}?height=600&width=600` ||
+                          "/image.png"
+                        }
+                        alt={featured?.name}
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
 
-                    {newProduct(featured) && (
-                      <Badge className="absolute top-4 left-4 bg-green-500 hover:bg-green-600">
-                        New
-                      </Badge>
-                    )}
+                      {newProduct(featured) && (
+                        <Badge className="absolute top-4 left-4 bg-green-500 hover:bg-green-600">
+                          New
+                        </Badge>
+                      )}
 
-                    <FavoriteIcon
-                      product={featured}
-                      className="!top-3 !right-3"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-2">
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-3 h-3 ${
-                              i < Math.floor(featured?.avgRating || 0)
-                                ? "fill-current"
-                                : ""
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-600 ml-2">
-                        ({featured.totalComments} reviews)
-                      </span>
+                      <FavoriteIcon
+                        product={featured}
+                        className="!top-3 !right-3"
+                      />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {featured?.name}
-                    </h3>
-
-                    <p className="text-gray-600 mb-4">
-                      {featured?.productShortDesc || ""}
-                    </p>
-                    <div className="flex items-center flex-wrap justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-main">
-                          {currency}
-                          {calculateProductPrice(featured)}
+                    <div className="p-6">
+                      <div className="flex items-center mb-2">
+                        <div className="flex text-yellow-400">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-3 h-3 ${
+                                i < Math.floor(featured?.avgRating || 0)
+                                  ? "fill-current"
+                                  : ""
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-sm text-gray-600 ml-2">
+                          ({featured?.totalComments} reviews)
                         </span>
-
-                        {featured?.price?.discountValue > 0 && (
-                          <span className="text-sm text-gray-500 line-through">
-                            {currency}
-                            {featured?.price?.productPrice}
-                          </span>
-                        )}
                       </div>
-                      <Link href={`/product/${featured?.slug}`}>
-                        <Button className="bg-main hover:bg-main-light rounded-full">
-                          View Product
-                        </Button>
-                      </Link>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        {featured?.name}
+                      </h3>
+
+                      <p className="text-gray-600 mb-4">
+                        {featured?.productShortDesc || ""}
+                      </p>
+                      <div className="flex items-center flex-wrap justify-between">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-2xl font-bold text-main">
+                            {currency}
+                            {calculateProductPrice(featured)}
+                          </span>
+
+                          {featured?.price?.discountValue > 0 && (
+                            <span className="text-sm text-gray-500 line-through">
+                              {currency}
+                              {featured?.price?.productPrice}
+                            </span>
+                          )}
+                        </div>
+                        <Link href={`/product/${featured?.slug}`}>
+                          <Button className="bg-main hover:bg-main-light rounded-full">
+                            View Product
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           )}
 
@@ -206,7 +214,10 @@ const MasonaryProducts = () => {
                 <div className="relative overflow-hidden rounded-t-lg">
                   <Image
                     onClick={() => handleOpenModal(product)}
-                    src={`${product?.featureImage?.image}?height=200&width=300`}
+                    src={
+                      `${product?.featureImage?.image}?height=200&width=300` ||
+                      "/image.png"
+                    }
                     alt={product.name}
                     width={300}
                     height={200}

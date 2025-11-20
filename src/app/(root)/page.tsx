@@ -1,5 +1,5 @@
 // import BannerSection from "@/components/pages/home/BannerSection";
-import BannerSection from "@/components/pages/home/BannerSection";
+// import BannerSection from "@/components/pages/home/BannerSection";
 import CategoriesSection from "@/components/pages/home/categories-section";
 import MasonaryProducts from "@/components/pages/home/masonary-products";
 import ProductSection from "@/components/pages/home/ProductSection";
@@ -38,7 +38,7 @@ const HomePage = () => {
   return (
     <main>
       {/* Hero Banner */}
-      <BannerSection />
+      {/* <BannerSection /> */}
 
       {/* Categoriys section */}
       <CategoriesSection />

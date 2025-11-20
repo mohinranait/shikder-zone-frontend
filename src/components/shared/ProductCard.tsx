@@ -220,13 +220,13 @@ const ProductCard = ({ product, className, isRating = true }: Props) => {
                   type="button"
                   onClick={() => handleAddToCart("order")}
                   size="sm"
-                  className="h-[32px] px-[8px]"
+                  className="h-[32px] px-[8px] bg-main hover:bg-main"
                 >
                   Order
                 </Button>
               ) : (
                 <Link href={`/product/${slug}`}>
-                  <Button type="button" className=" h-[32px] px-[8px] ">
+                  <Button type="button" className=" h-[32px] px-[8px]  ">
                     Details
                   </Button>
                 </Link>
