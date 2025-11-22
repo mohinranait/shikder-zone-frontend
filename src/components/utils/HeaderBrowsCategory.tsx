@@ -61,7 +61,7 @@ const HeaderBrowsCategory = () => {
   }, [categories]);
 
   return (
-    <ul className="relative z-[999] divide-y bg-white max-h-[400px] ">
+    <ul className="relative z-[999] divide-y bg-white  ">
       {showCategories?.map((category: TTreeNode, index) => (
         <li key={index} className="group/category">
           <Link

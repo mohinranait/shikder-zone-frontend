@@ -157,18 +157,23 @@ const MiddleProductBar = ({
         </div>
       )}
       <div className="flex gap-2">
-        <Button
-          className="w-full rounded bg-green-700 hover:bg-green-600"
-          type="button"
+        <Link
+          className="w-full"
+          href={`https://wa.me/+8801728068200?text=Hello,%20I%20have%20a%20query%20regarding%20the%20product:%20${process.env.NEXT_PUBLIC_CLIENT_URL}/product/${product?.slug}`}
         >
-          <Image
-            src={"/WhatsApp.png"}
-            width={20}
-            height={20}
-            alt="WhatsApp logo"
-          />
-          WhatsApp
-        </Button>
+          <Button
+            className="w-full rounded bg-green-700 hover:bg-green-600"
+            type="button"
+          >
+            <Image
+              src={"/WhatsApp.png"}
+              width={20}
+              height={20}
+              alt="WhatsApp logo"
+            />
+            WhatsApp
+          </Button>
+        </Link>
         <Button
           className="w-full rounded text-white bg-green-800 hover:bg-green-700"
           type="button"

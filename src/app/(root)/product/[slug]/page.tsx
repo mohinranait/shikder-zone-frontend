@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatDistanceToNow } from "date-fns";
-
+import "./product.css";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -33,6 +33,8 @@ import MiddleProductBar from "@/components/pages/product/middle-product-bar";
 import { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from "next/navigation";
+import WhatsAppSvg from "@/components/svg/WhatsAppSvg";
+import Link from "next/link";
 
 type TProductComment = BaseProductComment & {
   userId: {
@@ -219,13 +221,13 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="details" className="mt-0">
-              <div className="bg-white col-span-2 px-5 py-4">
-                <p className="font-semibold text-lg mb-2 text-gray-900">
+              <div className="bg-white col-span-2 px-5 py-4 blog-post-preview">
+                <p className="font-bold text-lg mb-2 text-gray-900">
                   Product details of {product?.productName}
                 </p>
                 {product?.details && (
                   <div
-                    className="quill-content"
+                    className=""
                     dangerouslySetInnerHTML={{ __html: product?.details }}
                   />
                 )}
@@ -234,7 +236,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
 
             <TabsContent value="reviews" className="mt-0">
               <div className="col-span-2 bg-white py-4">
-                <p className=" text-sm font-semibold text-gray-700 px-5  ">
+                <p className=" text-sm font-bold text-gray-700 px-5  ">
                   Ratings & Reviews of {product?.productName}
                 </p>
                 <div className="md:grid grid-cols-3 pb-5 gap-5  py-4 px-5">
@@ -366,6 +368,13 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
           </CardContent>
         </Card>
       </div>
+
+      <Link
+        href={`https://wa.me/+8801728068200?text=Hello,%20I%20have%20a%20query%20regarding%20the%20product:%20${process.env.NEXT_PUBLIC_CLIENT_URL}/product/${product?.slug}`}
+        className="fixed bottom-5 right-5 z-50"
+      >
+        <WhatsAppSvg />
+      </Link>
     </section>
   );
 };

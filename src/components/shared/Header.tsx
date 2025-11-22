@@ -270,7 +270,7 @@ const Header = () => {
             </Button>
             {openCategory && (
               <div className="w-[280px] z-[4] bg-white absolute top-[calc(100%+1px)] left-0  ">
-                <div className="border border-border border-t-0 max-h-[400px]  rounded rounded-t-none ">
+                <div className="border border-border border-t-0   rounded rounded-t-none ">
                   <HeaderBrowsCategory />
                 </div>
               </div>
