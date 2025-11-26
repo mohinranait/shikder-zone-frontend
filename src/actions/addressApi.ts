@@ -1,6 +1,7 @@
 import { SERVER_URL } from "@/helpers/secretVariable";
 import { TAddress } from "@/types/address.type";
 
+// Nothing to export from this file yet
 /**
  * @api {post} create a new address method
 */
