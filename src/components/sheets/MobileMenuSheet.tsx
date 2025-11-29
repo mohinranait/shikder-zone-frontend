@@ -167,6 +167,7 @@ const MobileMenuSheet = () => {
                     <Link
                       key={link?.name}
                       href={link?.href}
+                      onClick={() => setOpen(false)}
                       className="block text-sm py-1"
                     >
                       {link?.name}

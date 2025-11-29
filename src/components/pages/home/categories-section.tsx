@@ -15,7 +15,7 @@ const CategoriesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8 ">
-          <h2 className="text-3xl  font-bold text-gray-900 mb-1">
+          <h2 className="text-xl sm:text-2xl md:text-3xl  font-bold text-gray-900 mb-1">
             Shop by <span className="text-brand">Categories</span>
           </h2>
           <p className=" text-gray-600 max-w-2xl mx-auto">
