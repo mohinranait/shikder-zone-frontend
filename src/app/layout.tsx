@@ -8,6 +8,7 @@ import { getAllBrands } from "@/actions/brandApi";
 import { getAllProducts } from "@/actions/productApi";
 import { getAllAttributes } from "@/actions/attributeApi";
 import ProductViewModal from "@/components/modals/ProductViewModal";
+import FacebookPixel from "@/components/shared/FacebookPixel";
 
 const inter = Inter({
   weight: "400",
@@ -43,6 +44,7 @@ export default async function RootLayout({
           products={products}
           attributes={attributes}
         >
+          <FacebookPixel />
           {children}
           <Toaster />
           <ProductViewModal />
